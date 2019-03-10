@@ -1,0 +1,349 @@
+{
+	"info": {
+		"_postman_id": "2605514d-4567-40c7-942f-1dd5d5b19854",
+		"name": "hopex",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "home_index",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "02428e02-5455-4a3b-921b-edeb1ebaf3c8",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{host}}/api/v1/gateway/Home/Index?type=Web&culture=en",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"gateway",
+						"Home",
+						"Index"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "Web"
+						},
+						{
+							"key": "culture",
+							"value": "en"
+						}
+					]
+				},
+				"description": "首页：banner、通知、top合约"
+			},
+			"response": []
+		},
+		{
+			"name": "home_contracts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "70683035-3af0-40fb-a7a5-38cdfc4df5ad",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{host}}/api/v1/gateway/Home/Contracts?culture=en",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"gateway",
+						"Home",
+						"Contracts"
+					],
+					"query": [
+						{
+							"key": "culture",
+							"value": "en"
+						}
+					]
+				},
+				"description": "首页合约列表"
+			},
+			"response": []
+		},
+		{
+			"name": "orderParameter",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "315bdca1-866e-4c83-a46a-73bb2cf033a7",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"param\":{\"price\":0,\"amount\":1,\"market\":\"BTCUSDT\",\"marketCode\":\"BTCUSDT\",\"contractCode\":\"BTCUSDT\",\"lang\":\"zh-CN\"}}"
+				},
+				"url": {
+					"raw": "https://{{host}}/api/v2/gateway/Trade/OrderParameter?culture=zh-CN",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"gateway",
+						"Trade",
+						"OrderParameter"
+					],
+					"query": [
+						{
+							"key": "culture",
+							"value": "zh-CN"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetLeverrageSetting",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ca014c83-0f93-45dc-a7f7-f6dcf6900258",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{host}}/api/v1/gateway/Trade/GetLeverageSetting?market=BTCUSDT&marketCode=BTCUSDT&contractCode=BTCUSDT&lang=zh-CN&culture=zh-CN",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"gateway",
+						"Trade",
+						"GetLeverageSetting"
+					],
+					"query": [
+						{
+							"key": "market",
+							"value": "BTCUSDT"
+						},
+						{
+							"key": "marketCode",
+							"value": "BTCUSDT"
+						},
+						{
+							"key": "contractCode",
+							"value": "BTCUSDT"
+						},
+						{
+							"key": "lang",
+							"value": "zh-CN"
+						},
+						{
+							"key": "culture",
+							"value": "zh-CN"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OrderBook",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "67ace475-1cd2-4a25-a269-4dc449c76278",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"param\":{\"pageSize\":\"100\",\"interval\":\"0\",\"market\":\"BTCUSDT\",\"marketCode\":\"BTCUSDT\",\"contractCode\":\"BTCUSDT\",\"lang\":\"zh-CN\"}}\n\n"
+				},
+				"url": {
+					"raw": "https://{{host}}/api/v1/gateway/OrderBook/Index?culture=zh-CN",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"gateway",
+						"OrderBook",
+						"Index"
+					],
+					"query": [
+						{
+							"key": "culture",
+							"value": "zh-CN"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Klines",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "aac83fcf-b8af-4a5b-9ca3-328e50e0a28e",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{host}}/api/v1/gateway/Home/KLines?startTime=1551985249&endTime=1552011169&interval=60&market=BTCUSDT&marketCode=BTCUSDT&contractCode=BTCUSDT&lang=zh-CN&culture=zh-CN",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"gateway",
+						"Home",
+						"KLines"
+					],
+					"query": [
+						{
+							"key": "startTime",
+							"value": "1551985249"
+						},
+						{
+							"key": "endTime",
+							"value": "1552011169"
+						},
+						{
+							"key": "interval",
+							"value": "60"
+						},
+						{
+							"key": "market",
+							"value": "BTCUSDT"
+						},
+						{
+							"key": "marketCode",
+							"value": "BTCUSDT"
+						},
+						{
+							"key": "contractCode",
+							"value": "BTCUSDT"
+						},
+						{
+							"key": "lang",
+							"value": "zh-CN"
+						},
+						{
+							"key": "culture",
+							"value": "zh-CN"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
